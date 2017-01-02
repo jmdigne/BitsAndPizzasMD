@@ -3,7 +3,7 @@
 My own version of Material Design Demo https://github.com/dogriffiths/HeadFirstAndroid/tree/master/chapter14
 
 
-== Mandatory ==
+# Mandatory
 When you add dependencies, Android Studio records them in the app/build.gradle file:
 
 dependencies {
