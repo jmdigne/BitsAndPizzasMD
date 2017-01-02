@@ -4,10 +4,11 @@ My own version of Material Design Demo https://github.com/dogriffiths/HeadFirstA
 
 
 # Mandatory
+See https://github.com/jmdigne/BitsAndPizzasMD/blob/master/app/build.gradle
+
 When you add dependencies, Android Studio records them in the app/build.gradle file:
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+dependencies {compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:recyclerview-v7:22.2.1'
     compile 'com.android.support:cardview-v7:22.2.1'

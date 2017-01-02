@@ -77,7 +77,14 @@ public class MainActivity extends Activity {
                                                                    if (fragment instanceof TopFragment) {
                                                                        currentPosition = 0;
                                                                    }
-                                                                   if (fragment instanceof PizzaFragment) {
+                                                                   //if (fragment instanceof PizzaFragment) {
+
+                                                                   // We’re using our new PizzaMaterialFragment
+                                                                   // instead of PizzaFragment. This means that
+                                                                   // when the user clicks on the Pizzas option in
+                                                                   // the navigation drawer, our shiny new recycler
+                                                                   // list will be displayed.
+                                                                   if (fragment instanceof PizzaMaterialFragment) {
                                                                        currentPosition = 1;
                                                                    }
                                                                    if (fragment instanceof PastaFragment) {
@@ -99,7 +106,8 @@ public class MainActivity extends Activity {
         Fragment fragment;
         switch(position) {
         case 1:
-            fragment = new PizzaFragment();
+            // fragment = new PizzaFragment();
+            fragment = new PizzaMaterialFragment();
             break;
         case 2:
             fragment = new PastaFragment();
