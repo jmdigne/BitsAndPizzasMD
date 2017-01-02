@@ -19,11 +19,14 @@ public class PizzaMaterialFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Use the layout we updated
         RecyclerView pizzaRecycler = (RecyclerView)inflater.inflate(R.layout.fragment_pizza_material,
                 container, false);
 
         String[] pizzaNames = new String[Pizza.pizzas.length];
         for (int i = 0; i < pizzaNames.length; i++) {
+            // Add the pizza names to an array of Strings, and the pizza images
+            // to an array of ints
             pizzaNames[i] = Pizza.pizzas[i].getName();
         }
 
@@ -32,14 +35,18 @@ public class PizzaMaterialFragment extends Fragment {
             pizzaImages[i] = Pizza.pizzas[i].getImageResourceId();
         }
 
+        // Pass the arrays to the adapter.
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(pizzaNames, pizzaImages);
         pizzaRecycler.setAdapter(adapter);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         pizzaRecycler.setLayoutManager(layoutManager);
         adapter.setListener(new CaptionedImagesAdapter.Listener() {
             public void onClick(int position) {
                 Intent intent = new Intent(getActivity(), PizzaDetailActivity.class);
                 intent.putExtra(PizzaDetailActivity.EXTRA_PIZZANO, position);
+                // This implements the Listener onClick() method. It starts PizzaDetailActivity, passing it the
+                // ID of the pizza the user chose.
                 getActivity().startActivity(intent);
             }
         });
